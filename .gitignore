@@ -1,0 +1,22 @@
+# ----- keep these OUT of the repo -----
+# decrypted/encrypted seed & runtime logs
+data/seed.txt
+encrypted_seed.txt
+decrypted_seed_hex.txt
+cron/last_code.txt
+cron/cron.log
+
+# caches / env / IDE
+__pycache__/
+*.pyc
+.env
+.vscode/
+.idea/
+
+# by default ignore all pem files
+*.pem
+
+# ----- BUT explicitly include the 3 required keys -----
+!student_private.pem
+!student_public.pem
+!instructor_public.pem

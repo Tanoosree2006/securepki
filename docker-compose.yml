@@ -1,0 +1,21 @@
+services:
+  app:
+    build: .
+    container_name: securepki-app
+    ports:
+      - "8080:8080"        # host:container
+    environment:
+      - TZ=UTC
+    volumes:
+      - seed-data:/app/data       # named volume for seed + state
+      - cron-output:/cron         # named volume for cron outputs
+      # key files (read-only) from your working folder:
+      - ./student_private.pem:/app/student_private.pem:ro
+      # (optional) if you use these, keep them read-only too:
+      # - ./student_public.pem:/app/student_public.pem:ro
+      # - ./instructor_public.pem:/app/instructor_public.pem:ro
+    restart: unless-stopped
+
+volumes:
+  seed-data:
+  cron-output:

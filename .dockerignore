@@ -1,0 +1,8 @@
+.venv
+__pycache__/
+*.pem
+data/seed.txt
+encrypted_seed.txt
+decrypted_seed_hex.txt
+cron/last_code.txt
+cron/cron.log
